@@ -11,7 +11,28 @@
 |
 */
 
-Route::get('/', function()
+
+Route::get('/', 'EntryController@index');
+
+Route::post('/entry/create', 'EntryController@create');
+
+Route::get('/login', array('before' => array('force.ssl'), function() {
+	return App::make('LoginController')->index();
+}));
+
+Route::post('/login', array('before' => array('csrf', 'force.ssl'), function() {
+	return App::make('LoginController')->doLogin();
+}));
+
+
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('hello');
+
+	Route::get('/logout', array('before' => 'auth', function() {
+		return App::make('LoginController')->doLogout();
+	}));
+
+  Route::get('/admin', 'AdminController@index');
+
+
 });

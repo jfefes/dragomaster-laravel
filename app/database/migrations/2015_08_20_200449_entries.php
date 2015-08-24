@@ -13,6 +13,20 @@ class Entries extends Migration {
 	public function up()
 	{
 		//
+		Schema::create('entries', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->string('mundane');
+			$table->string('player');
+			$table->string('contact');
+			$table->string('kingdom');
+			$table->string('park');
+			$table->string('awarded');
+			$table->string('entry_name');
+			$table->text('entry');
+			$table->string('category');
+			$table->string('img_link');
+		});
 	}
 
 	/**
@@ -23,6 +37,9 @@ class Entries extends Migration {
 	public function down()
 	{
 		//
+		Schema::table('entries', function(Blueprint $table) {
+			$table->drop();
+		});
 	}
 
 }
