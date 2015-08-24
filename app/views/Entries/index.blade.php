@@ -26,17 +26,16 @@
 
   <section id="" class="container-fluid text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h3>
-                  Please be as thorough as possible.
-                </h3>
-              </div>
-            </div>
 
             <div class="row">
               <div class="text-center">
-                <p>
-                  Entries for Oylmpiad (Keep on the Borderlands 2015)
+                <h3>
+                  Culturals Item Submission <br>
+                  Keeplympiad: Olympiad at Keep on the Borderlands 2015
+                </h3>
+                <p><strong>
+                  Please be as thorough as possible.
+                  </strong>
                 </p>
               </div>
             </div>
@@ -86,15 +85,15 @@
                 <div class="form-group">
                   <div class="col-xs-12 col-sm-4">
                     <label for="mundane" class="control-label">Mundane Name</label>
-                      <input type="name" class="form-control" name="mundane" placeholder="Mundane Name">
+                      <input type="name" class="form-control" name="mundane" placeholder="Mundane Name" value={{{ $input['mundane'] or ""}}}>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                     <label for="player" class="control-label">Ork Name</label>
-                      <input type="name" class="form-control" name="player" placeholder="Ork Name">
+                      <input type="name" class="form-control" name="player" placeholder="Ork Name" value={{{ $input['player'] or ""}}}>
                   </div>
                   <div class="col-xs-12 col-sm-4">
                     <label for="contact" class="control-label">Contact (email/facebook link)</label>
-                      <input type="name" class="form-control" name="contact" placeholder="Contact me here">
+                      <input type="name" class="form-control" name="contact" placeholder="Contact me here" value={{{ $input['contact'] or ""}}}>
                     </div>
                   </div>
                   <div class="form-group">
@@ -106,7 +105,7 @@
 
                     <div class="col-xs-12 col-sm-6">
                       <label for="park" class="control-label">Park</label>
-                        <input type="name" class="form-control" name="park">
+                        <input type="name" class="form-control" name="park" value={{{ $input['park'] or ""}}}>
                     </div>
 
                   </div>
@@ -140,14 +139,16 @@
               <div class="form-group">
                 <div class="col-xs-12 col-sm-6">
                   <label>Was an award received for this?</label><br>
-                    <input type="radio" name="award" value="Yes" checked>Yes &nbsp; &nbsp; &nbsp; &nbsp;
-                    <input type="radio" name="award" value="No">No
-
+                    <input type="radio" name="award" value="Yes" checked> Yes &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="radio" name="award" value="No"> No
                 </div>
 
                 <div class="col-xs-12 col-sm-6">
                   <label for=""><strong>To assist the judges, please upload an image of your entry</strong></label>
                   <div class="text-center">
+                      <input type="radio" name="upload_choice" value="Uploaded an image:" checked> I want to upload an image of my entry &nbsp; &nbsp; &nbsp; &nbsp;
+                      <input type="radio" name="upload_choice" value="Chose not to upload an image"> I choose not to upload an image, at my own fault
+                      <br>
                     {{ Form::file('image') }}
                   </div>
                 </div>

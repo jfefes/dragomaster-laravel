@@ -32,7 +32,9 @@ Route::group(array('before' => 'auth'), function()
 		return App::make('LoginController')->doLogout();
 	}));
 
-  Route::get('/admin', 'AdminController@index');
+	Route::get('/admin', 'AdminController@index');
+
+  Route::get('/admin/export', 'AdminController@export');
 
 
 });

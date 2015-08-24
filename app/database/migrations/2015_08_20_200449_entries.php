@@ -25,6 +25,7 @@ class Entries extends Migration {
 			$table->string('entry_name');
 			$table->text('entry');
 			$table->string('category');
+			$table->string('upload_choice');
 			$table->string('img_link');
 		});
 	}

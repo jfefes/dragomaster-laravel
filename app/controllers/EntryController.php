@@ -50,25 +50,25 @@ class EntryController extends BaseController {
 		$entry->entry_name = $input["entry_name"];
 		$entry->entry = $input["entry_desc"];
 		$entry->category = $input["category"];
+		$entry->upload_choice = $input["upload_choice"];
 		$entry->img_link="";
 		$entry->save();
 
 		if (Input::hasFile('image'))
 		{
 			$file = Input::file('image');
-			$name = time().'-'.$file->getClientOriginalName();
-			$file = $file->move(public_path() . '/uploads/', $name);
-			$path = $file->getRealPath();;
-			$pos = strpos($path,'/public/');
-			if ($pos !== false) {
-					$path = substr($path, $pos + 1);
-			}
-			$input['file'] = $path;
-			$entry->img_link= $name;
+
+			$name = $entry->player . "-" . $entry->id;
+	    $storage = public_path();
+	    $path = $storage . '/uploads/';
+
+	    $file->move($path, $name);
+
+			$entry->img_link = $name;
 			$entry->save();
 		}
 
-		return View::make("Entries.index", array('success' => "Entry has been received! You may now enter another one."));
+		return View::make("Entries.index", array('success' => "Entry has been received! You may now enter another one.", 'input' => $input));
 
 
 	}
