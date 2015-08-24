@@ -57,7 +57,7 @@ class EntryController extends BaseController {
 		{
 			$file = Input::file('image');
 			$name = time().'-'.$file->getClientOriginalName();
-			$file = $file->move('uploads/', $name);
+			$file = $file->move(public_path() . 'uploads/', $name);
 			$path = $file->getRealPath();;
 			$pos = strpos($path,'/public/');
 			if ($pos !== false) {
