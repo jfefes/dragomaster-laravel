@@ -144,10 +144,10 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-6">
-                  <label for=""><strong>To assist the judges, please upload an image of your entry</strong></label>
+                  <label for=""><strong>To aid logistics, please upload an image of your entry</strong></label>
                   <div class="text-center">
                       <input type="radio" name="upload_choice" value="Uploaded an image:" checked> I want to upload an image of my entry &nbsp; &nbsp; &nbsp; &nbsp;
-                      <input type="radio" name="upload_choice" value="Chose not to upload an image"> I choose not to upload an image, at my own fault
+                      <input type="radio" name="upload_choice" value="Chose not to upload an image"> I choose not to upload an image, at my own peril
                       <br>
                     {{ Form::file('image') }}
                   </div>
