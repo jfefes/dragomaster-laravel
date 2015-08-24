@@ -4,7 +4,7 @@ class EntryController extends BaseController {
 
 	public function index()
 	{
-		return View::make('entries.index');
+		return View::make('Entries.index');
 	}
 
 	public function create()
@@ -35,7 +35,7 @@ class EntryController extends BaseController {
     $messages = $validator->messages();
 
     if(count($messages) > 0)
-      return View::make("entries.index", array('input' => $input, 'errors' => $messages->all()));
+      return View::make("Entries.index", array('input' => $input, 'errors' => $messages->all()));
 
 
 
@@ -68,7 +68,7 @@ class EntryController extends BaseController {
 			$entry->save();
 		}
 
-		return View::make("entries.index", array('success' => "Entry has been received! You may now enter another one."));
+		return View::make("Entries.index", array('success' => "Entry has been received! You may now enter another one."));
 
 
 	}

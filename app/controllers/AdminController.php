@@ -6,8 +6,8 @@ class AdminController extends BaseController {
 	{
 		$entries = Entry::get();
 
-		
-		return View::make('admin.index', array('entries' => $entries));
+
+		return View::make('Admin.index', array('entries' => $entries));
 	}
 
 }
