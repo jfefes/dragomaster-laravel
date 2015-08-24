@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-<?php $section="New Entry"; $title="New Entry"; ?>
+<?php $section="Admin"; $title="Admin"; ?>
 
 @section('content')
 
