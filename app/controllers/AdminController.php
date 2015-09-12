@@ -15,7 +15,9 @@ class AdminController extends BaseController {
 		$output='';
 
 		foreach($query as $entry){
+			 $entry->entry = str_replace(' ', '-', $entry->entry);
 				$entry->entry = preg_replace('/[^A-Za-z0-9\-]/', '', $entry->entry);
+ 				$entry->entry = str_replace('-', ' ', $entry->entry);
 
 				$entry = json_decode(json_encode($entry), true);
 
