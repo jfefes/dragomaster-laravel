@@ -25,6 +25,9 @@ Route::post('/login', array('before' => array('csrf', 'force.ssl'), function() {
 }));
 
 
+Route::get('/amy', 'AmyController@index');
+
+
 Route::group(array('before' => 'auth'), function()
 {
 

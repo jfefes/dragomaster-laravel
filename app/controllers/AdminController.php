@@ -10,11 +10,13 @@ class AdminController extends BaseController {
 	}
 
 	public function export(){
-		$query = Entry::select('mundane', 'player', 'kingdom', 'contact', 'entry_name', 'awarded', 'category', 'entry')->get();
+		$query = Entry::select('mundane', 'player', 'kingdom', 'contact', 'entry_name', 'awarded', 'category', 'entry', 'img_link')->get();
 
 		$output='';
 
 		foreach($query as $entry){
+			$entry->img_link = "http://olympiad.amtgard.io/uploads/" . $entry->img_link;
+
 			 $entry->entry = str_replace(' ', '-', $entry->entry);
 				$entry->entry = preg_replace('/[^A-Za-z0-9.\-]/', '', $entry->entry);
  				$entry->entry = str_replace('-', ' ', $entry->entry);
