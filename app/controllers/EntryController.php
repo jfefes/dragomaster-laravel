@@ -19,7 +19,6 @@ class EntryController extends BaseController {
 						'park'        			 => $input['park'],
 						'entry name'         => $input['entry_name'],
 						'entry description'  => $input['entry_desc'],
-            'image'          		 => $input['image'],
         ),
         array(
 					'mundane' 							=> 'required|min:2',
@@ -28,7 +27,6 @@ class EntryController extends BaseController {
 					'park' 									=> 'required|min:2',
 					'entry name'						=> 'required|min:2',
 					'entry description' 		=> 'required|min:2',
-					'image' 								=> 'mimes:jpeg,jpg,png',
         )
     );
 
