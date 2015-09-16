@@ -21,6 +21,10 @@ class AdminController extends BaseController {
 				$entry->entry = preg_replace('/[^A-Za-z0-9.\-]/', '', $entry->entry);
  				$entry->entry = str_replace('-', ' ', $entry->entry);
 
+				$entry->entry_name = str_replace(' ', '-', $entry->entry_name);
+ 				$entry->entry_name = preg_replace('/[^A-Za-z0-9.\-]/', '', $entry->entry_name);
+  				$entry->entry_name = str_replace('-', ' ', $entry->entry_name);
+
 
 				$entry = json_decode(json_encode($entry), true);
 
