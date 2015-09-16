@@ -52,7 +52,8 @@ class EntryController extends BaseController {
 		$entry->img_link="";
 		$entry->save();
 
-		if (Input::hasFile('image'))
+
+		if ($input["upload_choice"] == "Uploaded an image:")
 		{
 			$file = Input::file('image');
 
